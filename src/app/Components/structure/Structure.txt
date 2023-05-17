@@ -1,0 +1,6 @@
+Structure directives
+------------------------
+ngModel -> 
+ngIf ->
+ngSwitch ->
+ngFor ->

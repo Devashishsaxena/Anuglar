@@ -1,0 +1,53 @@
+<section class="mt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="h3 text-danger">
+                    Shoping List
+                </p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque, velit.</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="table table-hover text-center table-striped">
+                    <thead class="bg-secondary text-white">
+                        <tr>
+                            <th>Sno</th>
+                            <th>Name</th>
+                            <th>Image</th>
+                            <th>Qty</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let Shopping of shoppings ">
+                            <td>{{Shopping.sno}}</td>
+                            <td>{{Shopping.name}}</td>
+                            <td><img [src]="Shopping.image" width="50" height="50"></td>
+                            <td>
+                                <i class="fa fa-minus-square" (click)="decrementQty(Shopping.sno)"></i>
+                                {{Shopping.qty}}
+                                <i class="fa fa-plus-square" (click)="incrementQty(Shopping.sno)"></i>
+                            </td>
+                            <td>{{Shopping.price |currency : "INR"}}</td>
+                            <td>{{Shopping.price * Shopping.qty}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td>Grand Total</td>
+                            <td>{{CalcGrandTotal()}}</td>
+                        </tr>
+                    </tbody>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
